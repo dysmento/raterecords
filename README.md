@@ -15,6 +15,19 @@ To build and run the tests:
 
     ./mvnw clean test
 
+To create the application archive:
+
+    ./mvnw clean package
+
+This creates an executable jar in the `target/` directory.
+
+You can run the program from the command line like this:
+
+    java -jar target/raterecords-0.0.1-SNAPSHOT.jar \
+      "src/test/resources/commaDelimited.txt"       \
+      "src/test/resources/pipeDelimited.txt"        \
+      "src/test/resources/spaceDelimited.txt"
+
 ## Code Coverage
 We use [JaCoCo](https://www.jacoco.org/jacoco/) to generate a test code coverage report. This will be done 
 automatically when the tests are run. To see the report in your browser, open `target/site/jacoco/index.html`

@@ -21,6 +21,26 @@ public class RateRecord {
         this.dateOfBirth = dateOfBirth;
     }
 
+    public String getLastName() {
+        return lastName;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public Gender getGender() {
+        return gender;
+    }
+
+    public String getFavoriteColor() {
+        return favoriteColor;
+    }
+
+    public LocalDate getDateOfBirth() {
+        return dateOfBirth;
+    }
+
     @Override
     public String toString() {
         // "name:McFly, Marty gender:MALE color:orange DOB:6/12/1968"
