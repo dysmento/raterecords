@@ -28,6 +28,9 @@ You can run the program from the command line like this:
       "src/test/resources/pipeDelimited.txt"        \
       "src/test/resources/spaceDelimited.txt"
 
+It's expecting three arguments, each a path to an input file. If any of the files doesn't exist, you'll see a 
+`FileNotFoundException`.
+
 ## Code Coverage
 We use [JaCoCo](https://www.jacoco.org/jacoco/) to generate a test code coverage report. This will be done 
 automatically when the tests are run. To see the report in your browser, open `target/site/jacoco/index.html`
@@ -35,7 +38,7 @@ automatically when the tests are run. To see the report in your browser, open `t
 ## REST API
 The code includes a JSON API which you can run with this command:
 
-    mvn spring-boot:run -P rest
+    ./mvnw spring-boot:run -P rest
 
 It's necessary to specify the `rest` profile, otherwise the command-line main class will be used and the service
 won't run.
