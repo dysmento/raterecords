@@ -30,8 +30,10 @@ public class Main {
             // Output
             rateRecords.sort(Comparator.comparing(RateRecord::getGender).thenComparing(RateRecord::getLastName));
             rateRecords.forEach(System.out::println);
+            System.out.println();
             rateRecords.sort(Comparator.comparing(RateRecord::getDateOfBirth));
             rateRecords.forEach(System.out::println);
+            System.out.println();
             rateRecords.sort(Comparator.comparing(RateRecord::getLastName).reversed());
             rateRecords.forEach(System.out::println);
         }
