@@ -2,6 +2,7 @@ package fizzy.raterecords.model;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.Objects;
 
 public class RateRecord {
     DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("M/d/yyyy");
@@ -27,6 +28,19 @@ public class RateRecord {
                 + " gender:" + gender
                 + " color:" + favoriteColor
                 + " DOB:" + dateOfBirth.format(dateFormatter);
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        RateRecord that = (RateRecord) o;
+        return Objects.equals(lastName, that.lastName) && Objects.equals(firstName, that.firstName) && gender == that.gender && Objects.equals(favoriteColor, that.favoriteColor) && Objects.equals(dateOfBirth, that.dateOfBirth);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(lastName, firstName, gender, favoriteColor, dateOfBirth);
     }
 
     public static class Builder {
