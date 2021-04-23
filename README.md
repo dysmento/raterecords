@@ -39,3 +39,10 @@ The code includes a JSON API which you can run with this command:
 
 It's necessary to specify the `rest` profile, otherwise the command-line main class will be used and the service
 won't run.
+
+The web service will run on port 8080. These are the available endpoints:
+
+    POST /records          ;; takes a single line with Content-Type text/plain e.g. Lincoln, Abraham, male, brown, 1809-02-12
+    GET /records/name      ;; returns all records sorted by last name and then first name
+    GET /records/gender    ;; returns all record sorted by gender
+    GET /records/birthdate ;; return all records sorted by date of birth
