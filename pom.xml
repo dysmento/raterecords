@@ -15,7 +15,18 @@
 	<description>Code assignment for Guaranteed Rate</description>
 	<properties>
 		<java.version>11</java.version>
+		<spring.boot.mainclass>fizzy.raterecords.cli.Main</spring.boot.mainclass>
 	</properties>
+
+	<profiles>
+		<profile>
+			<id>rest</id>
+			<properties>
+				<spring.boot.mainclass>fizzy.raterecords.RaterecordsApplication</spring.boot.mainclass>
+			</properties>
+		</profile>
+	</profiles>
+
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -27,6 +38,12 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+
+		<dependency>
+			<groupId>io.rest-assured</groupId>
+			<artifactId>rest-assured</artifactId>
+			<scope>test</scope>
+		</dependency>
 	</dependencies>
 
 	<build>
@@ -35,7 +52,7 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 				<configuration>
-					<mainClass>fizzy.raterecords.cli.Main</mainClass>
+					<mainClass>${spring.boot.mainclass}</mainClass>
 				</configuration>
 			</plugin>
 			<plugin>
