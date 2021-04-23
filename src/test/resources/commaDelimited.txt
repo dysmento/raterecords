@@ -1,0 +1,2 @@
+Lux, Ed, MALE, red, 1841-06-05
+Fey, Tina, FEMALE, turquoise, 1999-12-04
